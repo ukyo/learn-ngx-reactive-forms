@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginFormWithValidationService } from "app/validation/login-form-with-validation.service";
+import { FormGroup } from "@angular/forms";
+import { LoginFormGroupWithDefaultValidatorFactoryService } from "app/validation/login-form-group-with-default-validator-factory.service";
 
 @Component({
   selector: 'validation',
@@ -8,9 +9,19 @@ import { LoginFormWithValidationService } from "app/validation/login-form-with-v
 })
 export class ValidationComponent implements OnInit {
 
-  constructor(public loginFormWithValidation: LoginFormWithValidationService) { }
+  loginFormWithDefaultValidator: FormGroup;
+  
+  constructor(
+    private loginFormGroupWithDefaultValidatorFactory: LoginFormGroupWithDefaultValidatorFactoryService,
+  ) {
+    this.loginFormWithDefaultValidator = this.loginFormGroupWithDefaultValidatorFactory.create({
+      name: '',
+      password: ''
+    });
+  }
 
   ngOnInit() {
+    
   }
 
 }
