@@ -1,0 +1,27 @@
+form.ng-valid {
+  background-color: #dfd;
+}
+
+form.ng-invalid {
+  background-color: #fdd;
+}
+
+form.ng-pending {
+  background-color: #ffd;
+}
+
+input {
+  border: 1px solid #aaa;
+}
+
+input.ng-valid {
+  border-color: #6b6;
+}
+
+input.ng-invalid {
+  border-color: #f66;
+}
+
+input.ng-pending {
+  border-color: orange;
+}
