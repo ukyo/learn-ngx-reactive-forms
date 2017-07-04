@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from "@angular/forms";
 
-const nameValidator = [
+export const nameValidator = Validators.compose([
   Validators.required,
   Validators.maxLength(16)
-];
+]);
 
-const passwordValidator = [
+export const passwordValidator = Validators.compose([
   Validators.required,
   Validators.minLength(6),
   Validators.maxLength(32)
-];
+]);
 
 const helloValidator = (c: AbstractControl) => c.value !== 'hello' ? { hello: true } : null;
 
@@ -28,10 +28,10 @@ const existValidator = (c: AbstractControl) => {
     }, 400);
   });
 };
-const emailValidator = [
+const emailValidator = Validators.compose([
   Validators.required,
   Validators.email,
-]
+]);
 
 @Injectable()
 export class LoginFormWithValidationService {
@@ -46,14 +46,14 @@ export class LoginFormWithValidationService {
     this.initGroupWithAsyncValidators();
   }
 
-  initGroupWithValidators() {
+  private initGroupWithValidators() {
     this.groupWithValidators = this.fb.group({
-      name: ['', nameValidator],
-      password: ['', Validators.compose(passwordValidator)]
+      name: this.fb.control('', nameValidator), // set the validator to the second paramator.
+      password: ['', passwordValidator] // syntax suger.
     });
   }
 
-  initGroupWithCustomValidators() {
+  private initGroupWithCustomValidators() {
     this.groupWithCustomValidators = this.fb.group({
       name: ['', helloValidator],
       password: ['', passwordValidator],
@@ -61,9 +61,9 @@ export class LoginFormWithValidationService {
     }, { validator: confirmPasswordValidator });
   }
 
-  initGroupWithAsyncValidators() {
+  private initGroupWithAsyncValidators() {
     this.groupWithAsyncValidators = this.fb.group({
-      email: ['', emailValidator, existValidator]
+      email: ['', emailValidator, existValidator] // set the async validator to the third paramator.
     });
   }
 }
