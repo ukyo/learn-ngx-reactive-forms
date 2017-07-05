@@ -3,6 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { IntroModule } from "app/intro/intro.module";
 import { ValidationModule } from "app/validation/validation.module";
 
+export function loadIntroModule() {
+  return IntroModule;
+}
+
+export function loadValidationModule() {
+  return ValidationModule;
+}
+
 export const routes: Routes = [
   {
     path: '',
@@ -10,11 +18,11 @@ export const routes: Routes = [
   },
   {
     path: 'intro',
-    loadChildren: () => IntroModule,
+    loadChildren: loadIntroModule,
   },
   {
     path: 'validation',
-    loadChildren: () => ValidationModule,
+    loadChildren: loadValidationModule,
   }
 ];
 
