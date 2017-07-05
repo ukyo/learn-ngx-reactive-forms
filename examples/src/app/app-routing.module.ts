@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IntroModule } from "app/intro/intro.module";
 import { ValidationModule } from "app/validation/validation.module";
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     children: []

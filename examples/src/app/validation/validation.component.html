@@ -1,20 +1,20 @@
 <h2>Validation</h2>
 
-<h3>FormGroup with Validators</h3>
-<form [formGroup]="loginFormWithValidation.groupWithValidators">
+<h3>FormGroup with Default Validators</h3>
+<form [formGroup]="loginFormWithDefaultValidator">
   <div>name: <input formControlName="name" type="text"></div>
   <div>password: <input formControlName="password" type="password"></div>
 </form>
 <pre>
-groupWithValidators.status: {{loginFormWithValidation.groupWithValidators.status}}
+loginFormWithDefaultValidator.status: {{loginFormWithDefaultValidator.status}}
 
-loginFormWithValidation.value: {{loginFormWithValidation.groupWithValidators.value | json}}
+loginFormWithDefaultValidator.value: {{loginFormWithDefaultValidator.value | json}}
 
-groupWithValidators.get("name").errors: {{loginFormWithValidation.groupWithValidators.get("name").errors | json}}
+loginFormWithDefaultValidator.get("name").errors: {{loginFormWithDefaultValidator.get("name").errors | json}}
 
-groupWithValidators.get("password").errors: {{loginFormWithValidation.groupWithValidators.get("password").errors | json}}
+loginFormWithDefaultValidator.get("password").errors: {{loginFormWithDefaultValidator.get("password").errors | json}}
 </pre>
-
+<!--
 <h3>FormGroup with Custom Validators</h3>
 <form [formGroup]="loginFormWithValidation.groupWithCustomValidators">
   <div>name(should be 'hello'): <input formControlName="name" type="text"></div>
@@ -44,4 +44,4 @@ groupWithAsyncValidators.status: {{loginFormWithValidation.groupWithAsyncValidat
 groupWithAsyncValidators.value: {{loginFormWithValidation.groupWithAsyncValidators.value | json}}
 
 groupWithAsyncValidators.get("email").errors: {{loginFormWithValidation.groupWithAsyncValidators.get("email").errors | json}}
-</pre>
+</pre>-->
