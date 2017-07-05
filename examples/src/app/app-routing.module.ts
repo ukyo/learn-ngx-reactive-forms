@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IntroModule } from 'app/intro/intro.module';
 import { ValidationModule } from 'app/validation/validation.module';
 import { ObservableModule } from 'app/observable/observable.module';
+import { OtherStatusesModule } from 'app/other-statuses/other-statuses.module';
 
 export function loadIntroModule() {
   return IntroModule;
@@ -14,6 +15,10 @@ export function loadValidationModule() {
 
 export function loadObservableModule() {
   return ObservableModule;
+}
+
+export function loadOtherStatusesModule() {
+  return OtherStatusesModule;
 }
 
 export const routes: Routes = [
@@ -32,6 +37,10 @@ export const routes: Routes = [
   {
     path: 'observable',
     loadChildren: loadObservableModule,
+  },
+  {
+    path: 'other-statuses',
+    loadChildren: loadOtherStatusesModule,
   }
 ];
 

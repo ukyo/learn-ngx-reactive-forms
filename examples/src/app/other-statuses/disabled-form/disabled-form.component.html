@@ -1,0 +1,57 @@
+<h3>Disabled</h3>
+
+<h4>normal</h4>
+
+<form [formGroup]="formGroup">
+  <button (click)="toggleDisabled(formGroup)">toggle disabled</button> disabled: {{formGroup.disabled}}
+  <div formGroupName="group1">
+    <button (click)="toggleDisabled(formGroup.get('group1'))">toggle disabled</button> disabled: {{formGroup.get('group1').disabled}}
+    <div>
+      <input placeholder="foo" formControlName="foo" type="text">
+      <button (click)="toggleDisabled(formGroup.get('group1.foo'))">toggle disabled</button> disabled: {{formGroup.get('group1.foo').disabled}}
+    </div>
+    <div>
+      <input placeholder="bar" formControlName="bar" type="text">
+      <button (click)="toggleDisabled(formGroup.get('group1.bar'))">toggle disabled</button> disabled: {{formGroup.get('group1.bar').disabled}}
+    </div>
+  </div>
+  <div formGroupName="group2">
+    <button (click)="toggleDisabled(formGroup.get('group2'))">toggle disabled</button> disabled: {{formGroup.get('group2').disabled}}
+    <div>
+      <input placeholder="hoge" formControlName="hoge" type="text">
+      <button (click)="toggleDisabled(formGroup.get('group2.hoge'))">toggle disabled</button> disabled: {{formGroup.get('group2.hoge').disabled}}
+    </div>
+    <div>
+      <input placeholder="fuga" formControlName="fuga" type="text">
+      <button (click)="toggleDisabled(formGroup.get('group2.fuga'))">toggle disabled</button> disabled: {{formGroup.get('group2.fuga').disabled}}
+    </div>
+  </div>
+</form>
+
+<h4>only self</h4>
+
+<form [formGroup]="formGroup2">
+  <button (click)="toggleDisabledOnlySelf(formGroup2)">toggle disabled</button> disabled: {{formGroup2.disabled}}
+  <div formGroupName="group1">
+    <button (click)="toggleDisabledOnlySelf(formGroup2.get('group1'))">toggle disabled</button> disabled: {{formGroup2.get('group1').disabled}}
+    <div>
+      <input placeholder="foo" formControlName="foo" type="text">
+      <button (click)="toggleDisabledOnlySelf(formGroup2.get('group1.foo'))">toggle disabled</button> disabled: {{formGroup2.get('group1.foo').disabled}}
+    </div>
+    <div>
+      <input placeholder="bar" formControlName="bar" type="text">
+      <button (click)="toggleDisabledOnlySelf(formGroup2.get('group1.bar'))">toggle disabled</button> disabled: {{formGroup2.get('group1.bar').disabled}}
+    </div>
+  </div>
+  <div formGroupName="group2">
+    <button (click)="toggleDisabledOnlySelf(formGroup2.get('group2'))">toggle disabled</button> disabled: {{formGroup2.get('group2').disabled}}
+    <div>
+      <input placeholder="hoge" formControlName="hoge" type="text">
+      <button (click)="toggleDisabledOnlySelf(formGroup2.get('group2.hoge'))">toggle disabled</button> disabled: {{formGroup2.get('group2.hoge').disabled}}
+    </div>
+    <div>
+      <input placeholder="fuga" formControlName="fuga" type="text">
+      <button (click)="toggleDisabledOnlySelf(formGroup2.get('group2.fuga'))">toggle disabled</button> disabled: {{formGroup2.get('group2.fuga').disabled}}
+    </div>
+  </div>
+</form>
