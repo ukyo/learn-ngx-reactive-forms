@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginFormGroupFactoryService } from 'app/intro/login-form-group-factory.service';
 import { FormGroup } from '@angular/forms';
+import { LoginFormGroupFactoryService } from 'app/intro/login-form-group-factory.service';
 
 @Component({
-  selector: 'intro',
-  templateUrl: './intro.component.html',
-  styleUrls: ['./intro.component.css']
+  selector: 'intro-root',
+  templateUrl: './intro-root.component.html',
+  styleUrls: ['./intro-root.component.css']
 })
-export class IntroComponent implements OnInit {
+export class IntroRootComponent implements OnInit {
 
   loginFormGroup: FormGroup;
 
