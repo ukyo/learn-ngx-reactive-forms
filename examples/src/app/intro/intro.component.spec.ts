@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { IntroComponent } from './intro.component';
-import { IntroModule } from "app/intro/intro.module";
+import { IntroModule } from 'app/intro/intro.module';
 
 describe('IntroComponent', () => {
   let component: IntroComponent;

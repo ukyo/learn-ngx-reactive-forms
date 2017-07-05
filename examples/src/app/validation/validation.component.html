@@ -1,47 +1,7 @@
 <h2>Validation</h2>
 
-<h3>FormGroup with Default Validators</h3>
-<form [formGroup]="loginFormWithDefaultValidator">
-  <div>name: <input formControlName="name" type="text"></div>
-  <div>password: <input formControlName="password" type="password"></div>
-</form>
-<pre>
-loginFormWithDefaultValidator.status: {{loginFormWithDefaultValidator.status}}
-
-loginFormWithDefaultValidator.value: {{loginFormWithDefaultValidator.value | json}}
-
-loginFormWithDefaultValidator.get("name").errors: {{loginFormWithDefaultValidator.get("name").errors | json}}
-
-loginFormWithDefaultValidator.get("password").errors: {{loginFormWithDefaultValidator.get("password").errors | json}}
-</pre>
-<!--
-<h3>FormGroup with Custom Validators</h3>
-<form [formGroup]="loginFormWithValidation.groupWithCustomValidators">
-  <div>name(should be 'hello'): <input formControlName="name" type="text"></div>
-  <div>password: <input formControlName="password" type="password"></div>
-  <div>confirm password:<input formControlName="confirmPassword" type="password"></div>
-</form>
-<pre>
-groupWithCustomValidators.status: {{loginFormWithValidation.groupWithCustomValidators.status}}
-
-groupWithCustomValidators.value: {{loginFormWithValidation.groupWithCustomValidators.value | json}}
-
-groupWithCustomValidators.get("name").errors: {{loginFormWithValidation.groupWithCustomValidators.get("name").errors | json}}
-
-groupWithCustomValidators.get("password").errors: {{loginFormWithValidation.groupWithCustomValidators.get("password").errors | json}}
-
-groupWithCustomValidators.errors: {{loginFormWithValidation.groupWithCustomValidators.errors | json}}
-</pre>
-
-<h3>FormGroup with Async Validators</h3>
-<form [formGroup]="loginFormWithValidation.groupWithAsyncValidators">
-  <div>Email should not be foo@foo.com, bar@bar.com or baz@bax.com.</div>
-  <div>email: <input formControlName="email" type="email"></div>
-</form>
-<pre>
-groupWithAsyncValidators.status: {{loginFormWithValidation.groupWithAsyncValidators.status}}
-
-groupWithAsyncValidators.value: {{loginFormWithValidation.groupWithAsyncValidators.value | json}}
-
-groupWithAsyncValidators.get("email").errors: {{loginFormWithValidation.groupWithAsyncValidators.get("email").errors | json}}
-</pre>-->
+<ul>
+  <li><a [routerLink]="'login-form'">Login form with default validators</a></li>
+  <li><a [routerLink]="'signup-form'">Sign up Form with custorm and async validators</a></li>
+</ul>
+<router-outlet></router-outlet>

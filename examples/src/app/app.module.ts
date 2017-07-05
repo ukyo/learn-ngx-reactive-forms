@@ -5,8 +5,8 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { IntroModule } from "app/intro/intro.module";
-import { ValidationModule } from "app/validation/validation.module";
+import { IntroModule } from 'app/intro/intro.module';
+import { ValidationModule } from 'app/validation/validation.module';
 
 @NgModule({
   declarations: [

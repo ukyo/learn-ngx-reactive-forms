@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { IntroModule } from "app/intro/intro.module";
-import { ValidationModule } from "app/validation/validation.module";
+import { IntroModule } from 'app/intro/intro.module';
+import { ValidationModule } from 'app/validation/validation.module';
 
 export function loadIntroModule() {
   return IntroModule;

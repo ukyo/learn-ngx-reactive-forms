@@ -1,0 +1,53 @@
+<h3>Sign up form with custom and async validators</h3>
+<form [formGroup]="signupFormGroup">
+  <div>
+    name:
+    <input formControlName="name" type="text">
+    <span class="error-message" *ngIf="signupFormGroup.get('name').hasError('hello')">should be 'hello'</span>
+  </div>
+  <div>
+    email:
+    <input formControlName="email" type="email">
+    <span class="error-message">
+      <ng-container *ngIf="signupFormGroup.get('email').hasError('required')">Email is required</ng-container>
+      <ng-container *ngIf="signupFormGroup.get('email').hasError('email')">Invalid email</ng-container>
+      <ng-container *ngIf="signupFormGroup.get('email').hasError('exists')">This email exists</ng-container>
+    </span>
+  </div>
+  <div>
+    password:
+    <input formControlName="password" type="password">
+    <span class="error-message">
+      <ng-container *ngIf="signupFormGroup.get('password').hasError('required')">Password is required.</ng-container>
+      <ng-container *ngIf="signupFormGroup.get('password').hasError('minlength')">
+        Curent password is {{signupFormGroup.get('password').getError('minlength').actualLength}} charactors.
+        Password must be {{signupFormGroup.get('password').getError('minlength').requiredLength}} charactors or long.
+      </ng-container>
+      <ng-container *ngIf="signupFormGroup.get('password').hasError('maxlength')">
+        Curent password is {{signupFormGroup.get('password').getError('maxlength').actualLength}} charactors.
+        Password must be {{signupFormGroup.get('password').getError('maxlength').requiredLength}} charactors or less.
+      </ng-container>
+    </span>
+  </div>
+  <div>
+    confirm password:
+    <input formControlName="confirmPassword" type="password">
+    <span class="error-message">
+      <ng-container *ngIf="signupFormGroup.get('confirmPassword').hasError('required')">Confirm password is required.</ng-container>
+      <ng-container *ngIf="signupFormGroup.hasError('confirmPassword')">Password and confirm password do not match.</ng-container>
+    </span>
+  </div>
+</form>
+<pre>
+status: {{signupFormGroup.status}}
+
+value: {{signupFormGroup.value | json}}
+
+name.errors: {{signupFormGroup.get("name").errors | json}}
+
+email.errors: {{signupFormGroup.get("email").errors | json}}
+
+password.errors: {{signupFormGroup.get("password").errors | json}}
+
+errors: {{signupFormGroup.errors | json}}
+</pre>

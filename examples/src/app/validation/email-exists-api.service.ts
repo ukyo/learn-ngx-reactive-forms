@@ -10,7 +10,7 @@ export class EmailExistsApiService {
   exists(email: string) {
     // emulate xhr.
     return new Promise(resolve => {
-      setTimeout(() => emails.some(s => s === email), Math.random() * 1000);
+      setTimeout(() => resolve(emails.some(s => s === email)), Math.random() * 1000);
     });
   }
 }

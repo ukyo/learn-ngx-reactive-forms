@@ -4,7 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ValidationComponent } from './validation.component';
-import { ValidationModule } from "app/validation/validation.module";
+import { ValidationModule } from 'app/validation/validation.module';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ValidationComponent', () => {
   let component: ValidationComponent;
@@ -12,7 +13,7 @@ describe('ValidationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ ValidationModule ]
+      imports: [ ValidationModule, RouterTestingModule ]
     })
     .compileComponents();
   }));

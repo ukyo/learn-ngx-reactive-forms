@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Validators, AbstractControl } from "@angular/forms";
-import { EmailExistsApiService } from "app/validation/email-exists-api.service";
+import { Validators, AbstractControl } from '@angular/forms';
+import { EmailExistsApiService } from 'app/validation/email-exists-api.service';
 
 @Injectable()
 export class MyValidatorsService {
-
-  constructor(private emailExistsApi: EmailExistsApiService) { }
 
   nameValidator = Validators.compose([
     Validators.required,
@@ -21,12 +19,14 @@ export class MyValidatorsService {
   helloValidator = (c: AbstractControl) => c.value !== 'hello' ? { hello: true } : null;
 
   confirmPasswordValidator = (c: AbstractControl) => {
-    if (!c.value.password || !c.value.confirmPassword) return null;
+    if (!c.value.password || !c.value.confirmPassword) {
+      return null;
+    }
     return c.value.password !== c.value.confirmPassword ? { confirmPassword: true } : null;
   };
 
 
-  existValidator = (c: AbstractControl) => {
+  existsValidator = (c: AbstractControl) => {
     return this.emailExistsApi.exists(c.value).then(exists => exists ? { exists } : null);
   };
 
@@ -34,4 +34,6 @@ export class MyValidatorsService {
     Validators.required,
     Validators.email,
   ]);
+
+  constructor(private emailExistsApi: EmailExistsApiService) { }
 }
