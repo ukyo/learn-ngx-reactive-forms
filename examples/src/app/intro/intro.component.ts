@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginFormService } from 'app/intro/login-form.service';
+import { LoginFormGroupFactoryService } from 'app/intro/login-form-group-factory.service';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'intro',
@@ -8,7 +9,14 @@ import { LoginFormService } from 'app/intro/login-form.service';
 })
 export class IntroComponent implements OnInit {
 
-  constructor(public loginForm: LoginFormService) { }
+  loginFormGroup: FormGroup;
+
+  constructor(loginFormGroupFactory: LoginFormGroupFactoryService) {
+    this.loginFormGroup = loginFormGroupFactory.create({
+      name: 'foo',
+      password: '',
+    });
+  }
 
   ngOnInit() {
   }

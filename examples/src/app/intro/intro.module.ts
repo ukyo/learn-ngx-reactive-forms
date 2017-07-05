@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IntroRoutingModule } from './intro-routing.module';
 import { IntroComponent } from './intro.component';
-import { ReactiveFormsModule } from "@angular/forms";
-import { LoginFormService } from "app/intro/login-form.service";
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginFormGroupFactoryService } from 'app/intro/login-form-group-factory.service';
 
 @NgModule({
   imports: [
@@ -12,6 +12,6 @@ import { LoginFormService } from "app/intro/login-form.service";
     IntroRoutingModule
   ],
   declarations: [IntroComponent],
-  providers: [LoginFormService],
+  providers: [LoginFormGroupFactoryService],
 })
 export class IntroModule { }
