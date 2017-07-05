@@ -4,6 +4,7 @@ import { IntroModule } from 'app/intro/intro.module';
 import { ValidationModule } from 'app/validation/validation.module';
 import { ObservableModule } from 'app/observable/observable.module';
 import { OtherStatusesModule } from 'app/other-statuses/other-statuses.module';
+import { ComplexFormModule } from 'app/complex-form/complex-form.module';
 
 export function loadIntroModule() {
   return IntroModule;
@@ -19,6 +20,10 @@ export function loadObservableModule() {
 
 export function loadOtherStatusesModule() {
   return OtherStatusesModule;
+}
+
+export function loadComplexFormModule() {
+  return ComplexFormModule;
 }
 
 export const routes: Routes = [
@@ -41,6 +46,10 @@ export const routes: Routes = [
   {
     path: 'other-statuses',
     loadChildren: loadOtherStatusesModule,
+  },
+  {
+    path: 'complex-form',
+    loadChildren: loadComplexFormModule,
   }
 ];
 
