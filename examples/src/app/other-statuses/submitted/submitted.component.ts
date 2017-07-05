@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, FormGroupDirective } from '@angular/forms';
 
 @Component({
   selector: 'submitted',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubmittedComponent implements OnInit {
 
-  constructor() { }
+  formGroup: FormGroup;
+  @ViewChild(FormGroupDirective) formGroupDirective: FormGroupDirective;
+
+  constructor(fb: FormBuilder) {
+    this.formGroup = fb.group({
+      name: ''
+    });
+  }
 
   ngOnInit() {
+  }
+
+  submit() {
+    console.log('submitted!');
+  }
+
+  resetForm() {
+    this.formGroupDirective.resetForm({ name: '' });
   }
 
 }

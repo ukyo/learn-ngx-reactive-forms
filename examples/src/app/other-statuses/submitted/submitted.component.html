@@ -1,3 +1,6 @@
-<p>
-  submitted works!
-</p>
+submitted: {{formGroupDirective?.submitted}}
+<form [formGroup]="formGroup" (submit)="submit()">
+  <input formControlName="name" type="text">
+  <button type="submit">submit</button>
+  <button type="button" (click)="resetForm()">reset form</button>
+</form>

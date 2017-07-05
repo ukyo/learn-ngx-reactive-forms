@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OtherStatusesRootComponent } from './other-statuses-root.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { OtherStatusesModule } from 'app/other-statuses/other-statuses.module';
 
 describe('OtherStatusesRootComponent', () => {
   let component: OtherStatusesRootComponent;
@@ -8,7 +10,10 @@ describe('OtherStatusesRootComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OtherStatusesRootComponent ]
+      imports: [
+        OtherStatusesModule,
+        RouterTestingModule,
+      ]
     })
     .compileComponents();
   }));

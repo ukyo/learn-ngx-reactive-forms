@@ -7,11 +7,13 @@ import { DisabledFormComponent } from './disabled-form/disabled-form.component';
 import { TouchedAndDirtyComponent } from './touched-and-dirty/touched-and-dirty.component';
 import { SubmittedComponent } from './submitted/submitted.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    RouterModule,
     OtherStatusesRoutingModule
   ],
   declarations: [OtherStatusesRootComponent, DisabledFormComponent, TouchedAndDirtyComponent, SubmittedComponent]

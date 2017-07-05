@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DisabledFormComponent } from './disabled-form.component';
+import { OtherStatusesModule } from 'app/other-statuses/other-statuses.module';
 
 describe('DisabledFormComponent', () => {
   let component: DisabledFormComponent;
@@ -8,7 +9,7 @@ describe('DisabledFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DisabledFormComponent ]
+      imports: [OtherStatusesModule]
     })
     .compileComponents();
   }));
