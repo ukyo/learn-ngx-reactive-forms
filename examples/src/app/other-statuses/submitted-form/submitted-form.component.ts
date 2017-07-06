@@ -1,20 +1,18 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, FormGroupDirective } from '@angular/forms';
+import { FormGroup, FormGroupDirective, FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: 'submitted',
-  templateUrl: './submitted.component.html',
-  styleUrls: ['./submitted.component.css']
+  selector: 'submitted-form',
+  templateUrl: './submitted-form.component.html',
+  styleUrls: ['./submitted-form.component.css']
 })
-export class SubmittedComponent implements OnInit {
+export class SubmittedFormComponent implements OnInit {
 
   formGroup: FormGroup;
   @ViewChild(FormGroupDirective) formGroupDirective: FormGroupDirective;
 
   constructor(fb: FormBuilder) {
-    this.formGroup = fb.group({
-      name: ''
-    });
+    this.formGroup = fb.group({ name: '' });
   }
 
   ngOnInit() {
