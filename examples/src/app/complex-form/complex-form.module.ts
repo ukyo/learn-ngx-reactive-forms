@@ -6,12 +6,25 @@ import { ComplexFormRootComponent } from './complex-form-root/complex-form-root.
 import { FormFieldSplittingComponent } from './form-field-splitting/form-field-splitting.component';
 import { DynamicFieldsComponent } from './dynamic-fields/dynamic-fields.component';
 import { RecursiveFormComponent } from './recursive-form/recursive-form.component';
+import { ProductFormFieldComponent } from './product-form-field/product-form-field.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ProductFormGroupFactoryService } from 'app/complex-form/product-form-group-factory.service';
 
 @NgModule({
   imports: [
     CommonModule,
-    ComplexFormRoutingModule
+    ReactiveFormsModule,
+    ComplexFormRoutingModule,
   ],
-  declarations: [ComplexFormRootComponent, FormFieldSplittingComponent, DynamicFieldsComponent, RecursiveFormComponent]
+  declarations: [
+    ComplexFormRootComponent,
+    FormFieldSplittingComponent,
+    DynamicFieldsComponent,
+    RecursiveFormComponent,
+    ProductFormFieldComponent,
+  ],
+  providers: [
+    ProductFormGroupFactoryService,
+  ]
 })
 export class ComplexFormModule { }

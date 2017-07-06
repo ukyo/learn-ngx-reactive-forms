@@ -1,3 +1,11 @@
-<p>
-  dynamic-fields works!
-</p>
+<h3>Dynamic fields</h3>
+
+<form [formGroup]="formGroup">
+  <div formArrayName="products">
+    <div *ngFor="let ctrl of productsCtrl.controls; let i = index" class="product">
+      <product-form-field [group]="ctrl"></product-form-field>
+      <button (click)="removeField(i)">- remove</button>
+    </div>
+  </div>
+  <div><button (click)="addField()">+ add product</button></div>
+</form>
