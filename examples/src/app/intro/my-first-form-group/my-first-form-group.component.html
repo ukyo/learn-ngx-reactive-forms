@@ -1,0 +1,9 @@
+<h3>My first form group</h3>
+
+<div>
+  <form [formGroup]="loginFormGroup">
+    <div>name: <input formControlName="name" type="text"></div>
+    <div>password: <input formControlName="password" type="password"></div>
+  </form>
+  <pre>{{loginFormGroup.value | json}}</pre>
+</div>

@@ -1,0 +1,15 @@
+<h3>Nested form</h3>
+
+<form [formGroup]="formGroup">
+  <div><input placeholder="name" formControlName="name" type="text"></div>
+  <div formArrayName="products">
+    <div formGroupName="0">
+      <input placeholder="name" formControlName="name" type="text">
+      <input placeholder="price" formControlName="price" type="text">
+    </div>
+    <div formGroupName="1">
+      <input placeholder="name" formControlName="name" type="text">
+      <input placeholder="price" formControlName="price" type="text">
+    </div>
+  </div>
+</form>

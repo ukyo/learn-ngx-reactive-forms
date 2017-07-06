@@ -1,8 +1,8 @@
 <h2>Intro</h2>
-<div>
-  <form [formGroup]="loginFormGroup">
-    <div>name: <input formControlName="name" type="text"></div>
-    <div>password: <input formControlName="password" type="password"></div>
-  </form>
-  <pre>{{loginFormGroup.value | json}}</pre>
-</div>
+
+<ul>
+  <li><a routerLink="my-first-form-group">My first form group</a></li>
+  <li><a routerLink="nested-form">Nested form</a></li>
+</ul>
+
+<router-outlet></router-outlet>
