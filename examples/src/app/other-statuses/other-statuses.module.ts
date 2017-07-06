@@ -5,17 +5,19 @@ import { OtherStatusesRoutingModule } from './other-statuses-routing.module';
 import { OtherStatusesRootComponent } from './other-statuses-root/other-statuses-root.component';
 import { DisabledFormComponent } from './disabled-form/disabled-form.component';
 import { TouchedAndDirtyComponent } from './touched-and-dirty/touched-and-dirty.component';
-import { SubmittedComponent } from './submitted/submitted.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { SubmittedFormComponent } from './submitted-form/submitted-form.component';
+import { IntroModule } from 'app/intro/intro.module';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
     RouterModule,
-    OtherStatusesRoutingModule
+    OtherStatusesRoutingModule,
+    IntroModule,
   ],
-  declarations: [OtherStatusesRootComponent, DisabledFormComponent, TouchedAndDirtyComponent, SubmittedComponent]
+  declarations: [OtherStatusesRootComponent, DisabledFormComponent, TouchedAndDirtyComponent, SubmittedFormComponent]
 })
 export class OtherStatusesModule { }

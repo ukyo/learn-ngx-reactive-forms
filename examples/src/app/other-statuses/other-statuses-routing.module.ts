@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { OtherStatusesRootComponent } from 'app/other-statuses/other-statuses-root/other-statuses-root.component';
 import { DisabledFormComponent } from 'app/other-statuses/disabled-form/disabled-form.component';
 import { TouchedAndDirtyComponent } from 'app/other-statuses/touched-and-dirty/touched-and-dirty.component';
-import { SubmittedComponent } from 'app/other-statuses/submitted/submitted.component';
+import { SubmittedFormComponent } from 'app/other-statuses/submitted-form/submitted-form.component';
 
 const routes: Routes = [
   {
@@ -19,8 +19,8 @@ const routes: Routes = [
         component: TouchedAndDirtyComponent,
       },
       {
-        path: 'submitted',
-        component: SubmittedComponent,
+        path: 'submitted-form',
+        component: SubmittedFormComponent,
       }
     ]
   }
