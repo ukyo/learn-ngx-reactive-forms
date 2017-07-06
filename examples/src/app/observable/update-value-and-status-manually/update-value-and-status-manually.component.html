@@ -1,3 +1,11 @@
-<p>
-  update-value-and-status-manually works!
-</p>
+<h3>Update value and status manually</h3>
+
+<div>
+  <button (click)="formGroup.updateValueAndValidity()">update value and validity</button>
+  <button (click)="formGroup.markAsPending()">mark as pending</button>
+  <button (click)="formGroup.setErrors({ foo: true })">set errors</button>
+  <button (click)="formGroup.get('name').setValue('hello')">set 'hello' to name field</button>
+</div>
+<form [formGroup]="formGroup">
+  <div><input placeholder="name" formControlName="name" type="text"></div>
+</form>

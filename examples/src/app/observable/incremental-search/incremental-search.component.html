@@ -1,3 +1,7 @@
-<p>
-  incremental-search works!
-</p>
+<h3>Incremental search</h3>
+
+<form [formGroup]="formGroup">
+  <div><input formControlName="query" type="text"></div>
+</form>
+
+<div *ngFor="let result of results">{{ result }}</div>
