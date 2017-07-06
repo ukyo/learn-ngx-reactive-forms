@@ -1,7 +1,9 @@
 <h3>Observable</h3>
-<form [formGroup]="signupFormGroup">
-  <div>name: <input formControlName="name" type="text"></div>
-  <div>email: <input formControlName="email" type="email"></div>
-  <div>password: <input formControlName="password" type="password"></div>
-  <div>confirm password: <input formControlName="confirmPassword" type="password"></div>
-</form>
+
+<ul>
+  <li><a routerLink="value-changes-and-status-changes">valueChanges and statusChanges</a></li>
+  <li><a routerLink="incremental-search">Incremental search</a></li>
+  <li><a routerLink="update-value-and-status-manually">Update value and status manually</a></li>
+</ul>
+
+<router-outlet></router-outlet>
