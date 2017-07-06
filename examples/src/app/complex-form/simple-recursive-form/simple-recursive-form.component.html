@@ -1,0 +1,6 @@
+<div [formGroup]="group">
+  <div><span class="toggle" (click)="areChildrenShown = !areChildrenShown">{{ areChildrenShown ? '+' : '-' }}</span><input formControlName="name" type="text"><button (click)="addChild()">+ add child</button></div>
+  <div class="children" *ngIf="areChildrenShown">
+    <simple-recursive-form *ngFor="let ctrl of children.controls" [group]="ctrl"></simple-recursive-form>
+  </div>
+</div>
