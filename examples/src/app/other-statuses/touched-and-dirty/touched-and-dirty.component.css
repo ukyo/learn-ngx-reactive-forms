@@ -1,0 +1,47 @@
+.form1.ng-touched {
+  background-color: #ffedd3;
+}
+
+.form1 .ng-touched {
+  background-color: #ffd589;
+}
+
+.form1 input.ng-touched {
+  border-color: #fa9313;
+}
+
+.form1.ng-untouched {
+  background-color: #e5eeff;
+}
+
+.form1 .ng-untouched {
+  background-color: #a9c7ff;
+}
+
+.form1 input.ng-untouched {
+  border-color: #6666ff;
+}
+
+.form2.ng-dirty {
+  background-color: #ffedd3;
+}
+
+.form2 .ng-dirty {
+  background-color: #ffd589;
+}
+
+.form2 input.ng-dirty {
+  border-color: #fa9313;
+}
+
+.form2.ng-pristine {
+  background-color: #e5eeff;
+}
+
+.form2 .ng-pristine {
+  background-color: #a9c7ff;
+}
+
+.form2 input.ng-pristine {
+  border-color: #6666ff;
+}

@@ -1,3 +1,42 @@
-<p>
-  touched-and-dirty works!
-</p>
+<h3>Touched and dirty</h3>
+
+<h4>Touched and untouched</h4>
+
+<form [formGroup]="formGroup1" class="form1">
+  <button (click)="formGroup1.markAsTouched()">mark as touched</button>
+  <button (click)="formGroup1.markAsUntouched()">mark as untouched</button>
+  touched: {{ formGroup1.touched }}
+  <div>
+    <input placeholder="name" formControlName="name" type="text">
+    <button (click)="formGroup1.get('name').markAsTouched()">mark as touched</button>
+    <button (click)="formGroup1.get('name').markAsUntouched()">mark as untouched</button>
+    touched: {{ formGroup1.get('name').touched }}
+  </div>
+  <div>
+    <input placeholder="password" formControlName="password" type="text">
+    <button (click)="formGroup1.get('password').markAsTouched()">mark as touched</button>
+    <button (click)="formGroup1.get('password').markAsUntouched()">mark as untouched</button>
+    touched: {{ formGroup1.get('password').touched }}
+  </div>
+</form>
+
+
+<h4>Dirty and pristine</h4>
+
+<form [formGroup]="formGroup2" class="form2">
+  <button (click)="formGroup2.markAsDirty()">mark as dirty</button>
+  <button (click)="formGroup2.markAsPristine()">mark as pristine</button>
+  dirty: {{ formGroup2.dirty }}
+  <div>
+    <input placeholder="name" formControlName="name" type="text">
+    <button (click)="formGroup2.get('name').markAsDirty()">mark as dirty</button>
+    <button (click)="formGroup2.get('name').markAsPristine()">mark as pristine</button>
+    dirty: {{ formGroup2.get('name').dirty }}
+  </div>
+  <div>
+    <input placeholder="password" formControlName="password" type="text">
+    <button (click)="formGroup2.get('password').markAsDirty()">mark as dirty</button>
+    <button (click)="formGroup2.get('password').markAsPristine()">mark as pristine</button>
+    dirty: {{ formGroup2.get('password').dirty }}
+  </div>
+</form>
